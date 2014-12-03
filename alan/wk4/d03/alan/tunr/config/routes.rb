@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'artists/index'
+  get 'artists/index' 
 
   devise_for :users
 
   root "artists#index"
 
-  resources :songs
+  resources :songs, :artists, :mixtapes
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

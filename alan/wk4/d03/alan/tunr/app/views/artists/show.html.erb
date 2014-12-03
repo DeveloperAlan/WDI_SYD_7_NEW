@@ -1,0 +1,9 @@
+<h1> Show page </h1>
+
+<h2><%= @artist.name %></h2>
+<small>by <%= @artist.hometown %> </small>
+<p><%=  @artist.bio %></p>
+<h6><%= @artist.years_active %></h6>
+<p><%= @artist.label %>
+
+<%= link_to 'Edit artist', edit_artist_path(@artist)%>
