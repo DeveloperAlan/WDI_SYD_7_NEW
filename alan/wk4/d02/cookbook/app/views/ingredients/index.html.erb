@@ -1,0 +1,9 @@
+<h2>Ingredients</h2>
+
+<p>
+  <%= link_to "Add Ingredient",  %>
+<ul>
+  <% @Ingredients.each do |Ingredient| %>
+    <li><<%= link_to ingredient.name, ingredient %>/li>
+  <% end %>
+</ul>
