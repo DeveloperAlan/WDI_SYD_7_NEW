@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,6 +16,32 @@
         <li><%= link_to 'New', new_todo_path %></li>
       </ul>
     </header>
-  </div>
+    <p>
+      <% @todo.each do |f| %>
+      <%= link_to f.text, f  %>
+      <% end %>
+    </p>
+
+    <form id="add-todo">
+  <p>
+    <label for="todo-text">Text</label>
+    <input type="text" id="todo-text">
+  </p>
+  <p>
+    <label for="todo-notes">Notes</label>
+    <textarea id="todo-notes"></textarea>
+  </p>
+  <p>
+    <input check type="checkbox" id="todo-completed" value="1">
+    <label for="todo-completed">Done?</label>
+  </p>
+  <p>
+    <input type="submit" value="Add Todo">
+  </p>
+</form>
+  </div> 
+<script src="../../assets/javascripts/application.js"></script>
 </body>
-</html>
+</html> -->
+
+  <input type="text" id="todo-text">

@@ -2,9 +2,18 @@ class TodosController < ApplicationController
   before_action :find_todo, only: [:show, :edit, :update, :destroy]
   def index
     @todo = Todo.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @todos }
+    end
   end
 
-  def show 
+  def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @todos }
+    end
   end
 
   def new 
