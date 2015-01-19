@@ -31,6 +31,7 @@ class StatusesController < ApplicationController
     respond_to do |f|
       f.json { render.json {status: "ok"} }
     end
+  end
 
   private
 
