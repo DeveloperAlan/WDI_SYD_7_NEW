@@ -8,7 +8,7 @@ class StatusesController < ApplicationController
   end
 
   def create 
-    @create = Status.create(status_params)
+    @status = Status.create(status_params)
 
     respond_to do |f|
       f.json { render json: @status}
