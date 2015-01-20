@@ -19,6 +19,18 @@
 //= require_tree .
 
 var statusCollection = new Statuses;
-statusCollection.fetch().then(function() {
-  console.log(statusCollection.models);
+
+statusCollection.on("add", function(status) {
+  $("body").append(
+    JST['status'](
+      status.toJSON()
+    )
+  );
+});
+
+statusCollection.fetch();
+
+statusCollection.create({
+  username: 'lmao',
+  content: 'because laughing is awesome'
 });
