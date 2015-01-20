@@ -29,7 +29,7 @@ class StatusesController < ApplicationController
     @status.destroy()
 
     respond_to do |f|
-      f.json { render.json {status: "ok"} }
+      f.json { render json: {status: "ok"} }
     end
   end
 

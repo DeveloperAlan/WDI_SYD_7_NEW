@@ -12,6 +12,13 @@
 //
 //= require jquery_ujs
 //= require turbolinks
+//= require handlebars.runtime
+//= require_tree ./templates
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree .
+
+var statusCollection = new Statuses;
+statusCollection.fetch().then(function() {
+  console.log(statusCollection.models);
+});
