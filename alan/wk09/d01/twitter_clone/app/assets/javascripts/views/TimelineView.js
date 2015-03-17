@@ -1,12 +1,18 @@
-var TimelineView = Backbone.View.extend({
+var TwitterCloneApp = TwitterCloneApp || {};
+
+TwitterCloneApp.TimelineView = Backbone.View.extend({
   tagName: "div",
   className: "timeline",
 
   // template: JST['statuses/timeline'], 
 
   initialize: function() {
-    this.collection.fetch();
     this.collection.on("add", this.addStatus, this);
+    this.collection.on("reset", this.render, this)
+  },
+
+  render: function() {
+    this.collection.each(this.addStatus, this);
   },
 
   // render: function() {
@@ -19,7 +25,7 @@ var TimelineView = Backbone.View.extend({
 
   
   addStatus: function(status) {
-      var statusView = new StatusView({ model: status});
+      var statusView = new TwitterCloneApp.StatusView({ model: status});
       this.$el.append(statusView.render().el);
   }
   

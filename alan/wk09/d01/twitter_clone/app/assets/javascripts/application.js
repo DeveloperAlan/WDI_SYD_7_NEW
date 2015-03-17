@@ -19,8 +19,9 @@
 //= require_tree ./views
 //= require_tree .
 
-var statusesCollection = new Statuses();
+var TwitterCloneApp = TwitterCloneApp || {};
 
-var timelineView = new TimelineView({collection: statusesCollection});
-
-$("body").append(timelineView.el);
+$(function() {
+  TwitterCloneApp.router = new TwitterCloneApp.AppRouter();
+  Backbone.history.start();
+});
